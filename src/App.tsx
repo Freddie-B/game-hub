@@ -1,4 +1,4 @@
-import { Grid, GridItem, Show } from "@chakra-ui/react";
+import { Grid, GridItem } from "@chakra-ui/react";
 import NavBar from "./components/NavBar";
 import theme from "./theme";
 import "./App.css";
@@ -11,14 +11,16 @@ function App() {
         base: `"nav" "main"`,
         lg: `"nav nav" "main aside"`,
       }}
+      templateRows="auto 1fr"
+      templateColumns="auto 1fr"
     >
-      <GridItem area="nav">
+      <GridItem gridArea="nav">
         <NavBar />
       </GridItem>
-      <Show above="lg"></Show>
-      <GridItem area="aside">Aside</GridItem>
-      <GridItem area="main">M</GridItem>
-      <GameGrid />
+      <GridItem gridArea="main">
+        <GameGrid />
+      </GridItem>
+      <GridItem gridArea="aside">Aside</GridItem>
     </Grid>
   );
 }
